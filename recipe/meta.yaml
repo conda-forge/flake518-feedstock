@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flake518-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flake518-{{ version }}.tar.gz
   sha256: 4345de7393fea6cf88ad601850b3aba722a0cf4023cbebaa6921218d7919ca53
 
 build:
@@ -14,15 +14,15 @@ build:
   entry_points:
     - flake518 = flake518.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7,<4
+    - python {{ python_min }}
     - pdm-pep517
     - pip
   run:
-    - python >=3.7,<4
+    - python >={{ python_min }},<4
     - tomli >=0.10.2
     - flake8 >=3.0.0
 
@@ -34,6 +34,7 @@ test:
     - flake518 --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/carstencodes/flake518

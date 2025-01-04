@@ -14,7 +14,7 @@ build:
   entry_points:
     - flake518 = flake518.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:

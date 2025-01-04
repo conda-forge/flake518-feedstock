@@ -1,5 +1,5 @@
 {% set name = "flake518" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flake518-{{ version }}.tar.gz
-  sha256: 4345de7393fea6cf88ad601850b3aba722a0cf4023cbebaa6921218d7919ca53
+  sha256: e02efcacb9609e4250265600c7efd559576ae75c93b8898e019fec63128c90b5
 
 build:
   noarch: python
